@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import ProductsPage from "./pages/Products/ProductsPage";
 import ViewProductPage from "./pages/ViewProduct/ViewProductPage";
+import EditProductPage from "./pages/EditProduct/EditProduct";
 import "./styles.css";
 
 const productsData = [
@@ -86,11 +87,7 @@ export default function App() {
         </nav>
       </header>
       <Routes>
-        {/* 
-          TODO: add your route for editing a product here. The 
-          Route should be /products/:id/edit and it should use
-          the EditProduct element
-        */}
+        <Route path="/products/:id/edit" element={<EditProductPage setProducts={setProducts} products={products} />} />
         <Route path="/products/:id" element={<ViewProductPage />} />
         <Route path="/products" element={<ProductsPage products={products} />}/>
         <Route path="/" element={<Home />} />
